@@ -3,7 +3,7 @@ import ColorContext from './color';
 
 const ColorBox = () => {
   return (
-    <ColorContext.Consumer>
+    <ColorContext.Consumer >
       {
         value => (
           <div
