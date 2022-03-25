@@ -4,16 +4,24 @@ import ColorContext from './color';
 const ColorBox = () => {
   return (
     <ColorContext.Consumer >
-      {
-        value => (
+      {({ state }) => (
+        <>
           <div
             style={{
               width: '64px',
               height: '64px',
-              background: value.color
+              background: state.color
             }}
           />
-        )}
+          <div
+            style={{
+              width: '32px',
+              height: '32px',
+              background: state.subcolor
+            }}
+          />
+        </>
+      )}
     </ColorContext.Consumer>
   );
 }
