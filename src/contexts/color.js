@@ -1,13 +1,12 @@
 import React, { createContext, useState } from 'react';
 
+
 const ColorContext = createContext({
-  // 상태
   state: { color: 'black', subcolor: 'red' },
-  // 업데이트 함수 묶어서 전달. 
   actions: {
     setColor: () => { },
-    setSubColor: () => { }
-  }
+    setSubColor: () => { },
+  },
 });
 
 const ColorProvider = ({ children }) => {
@@ -16,8 +15,9 @@ const ColorProvider = ({ children }) => {
 
   const value = {
     state: { color, subcolor },
-    action: { setColor, setSubColor }
+    actions: { setColor, setSubColor }
   };
+
   return (
     <ColorContext.Provider value={value}>{children}</ColorContext.Provider>
   );
